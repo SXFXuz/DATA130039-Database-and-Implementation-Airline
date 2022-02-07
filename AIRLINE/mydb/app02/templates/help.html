@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/stylebooked.css">
+
+  <title>帮助</title>
+</head>
+
+<body id="home">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <div class="container">
+        <a href="/app02/help" class="navbar-brand"> <img src="/static/bootstrap-dist/img/logo1.png" height="40" width="40"> &nbsp;&nbsp;<strong><i>FDDS 航空</i></strong></a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                     <span class="navbar-toggler-icon"></span>
+                 </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="/app02/index" class="nav-link">主页</a>
+            </li>
+            <li class="nav-item">
+              <a href="/app02/information" class="nav-link">账户</a>
+            </li>
+            <li class="nav-item">
+              <a href="/app02/passenger" class="nav-link">乘机人</a><!--可以把乘机人放到账户下面-->
+            </li>
+            <li class="nav-item">
+              <a href="/app02/search/" class="nav-link">航班</a>
+            </li>
+            <li class="nav-item">
+              <a href="/app02/order_list" class="nav-link ">订单</a>
+            </li>
+          </ul>
+          &nbsp; <a href="{% url 'logout' %}" class="btn btn-info " role="button">退出登录</a>
+        </div>
+      </div>
+    </nav>
+
+  <!-- HOME SECTION -->
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container">
+
+
+              <h1 class="display-3 py-5"style="text-align: center;"><strong>感谢使用FDDS航空</strong></h1>
+<br><br>
+              <p style="text-align: center;font-size: 0.6cm;">
+                参与本系统设计的人员有：葛宇泽、李斌、李裕硕
+              如果有任何疑问，欢迎致电66662888或者投稿邮箱1390928851@qq.com
+              </p>
+                   </div>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+
+  <script src="/static/bootstrap-dist/js/jquery.min.js"></script>
+  <script src="/static/bootstrap-dist/js/popper.min.js"></script>
+  <script src="/static/bootstrap-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

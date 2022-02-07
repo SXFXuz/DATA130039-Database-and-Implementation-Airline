@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/passenger.css">
+
+  <title>航班</title>
+</head>
+
+<body id="home">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <div class="container">
+      <a href="/app02/help" class="navbar-brand"> <img src="/static/bootstrap-dist/img/logo1.png" height="40" width="40"> &nbsp;&nbsp;<strong><i>FDDS 航空</i></strong></a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/app02/index" class="nav-link">主页</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/information" class="nav-link">账户</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/passenger" class="nav-link ">乘机人</a><!--可以把乘机人放到账户下面-->
+          </li>
+          <li class="nav-item">
+            <a href="/app02/search/" class="nav-link active">航班</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/order_list" class="nav-link">订单</a>
+          </li>
+        </ul>
+			&nbsp; <a href="{% url 'logout' %}" class="btn btn-info " role="button">退出登录</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container">
+          <div style="margin-left:auto">
+          <h1 class="display-6"><strong>航班信息</strong></h1><!--btn 1452-->
+          <!-- <a href="welcome.html" ><div class="btn_2 ">默认排序</div></a> -->
+          <!-- <a href="welcome.html" class="btn btn-info " role="button">按照时间排序</a>
+          <a href="welcome.html" class="btn btn-info " role="button">按照价格排序</a> -->
+          </div>
+          <br>
+		      <div style="overflow: scroll;height: 10cm;width: 32cm;">
+    <table class="table"><!--table926-->
+    <thead>
+        <tr>
+            <th>航班号</th>
+        <th>出发日期</th>
+        <th>出发到达时间</th>
+        <th>出发到达机场</th>
+        <th>经停机场</th>
+        <th>头等舱</th>
+        <th>经济舱</th>
+        <th>飞机型号</th>
+        <th>航程</th>
+        <th>航空公司</th>
+            <th class="text-center">操作</th>
+        </tr>
+    </thead>
+    <tbody style="overflow:scroll;">
+        {% for flight_object,firstclass,econoclass in combined_list %}
+        <tr>
+            <td>{{flight_object.flight_id}}</td>
+        <td>{{flight_object.departure_day}}</td>
+        <td>{{flight_object.departure_time}}—{{flight_object.arrival_time}}</td>
+        <td>{{flight_object.departure_airport}}——{{flight_object.arrival_airport}}</td>
+        <td>{{flight_object.stopover_airport}}</td>
+        <td>剩余舱数：{{flight_object.first_class_num|add:firstclass}}<br>
+        价格：{{flight_object.first_class_price}}</td>
+        <td>剩余舱数：{{flight_object.economy_class_num|add:econoclass}}<br>
+        价格：{{flight_object.economy_class_price}}</td>
+        <td>{{flight_object.aircraft_type}}</td>
+        <td>{{flight_object.voyage}}</td>
+        <td>{{flight_object.company}}</td>
+            <td class="text-center"><a class='btn btn-success btn-md'
+                                       href="/app02/booking/?flightid={{flight_object.flight_id}}"
+            ><span class="glyphicon glyphicon-edit"></span> 订票</a> </td>
+        </tr>
+        {% endfor %}
+</tbody>
+    </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<section id="explore-head-section">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">联系我们</h1>
+            <br>
+          <p class="lead">如果您有任何问题，欢迎联系我们。</p>
+            <br>
+          <a href="/app02/help" class="btn btn-outline-secondary">详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+  <script src="/static/bootstrap-dist/js/jquery.min.js"></script>
+  <script src="/static/bootstrap-dist/js/popper.min.js"></script>
+  <script src="/static/bootstrap-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+
+
+

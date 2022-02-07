@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>欢迎</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/bootstrap-dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bootstrap-dist/css/stylebooked.css">
+</head>
+
+<body id="home">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <div class="container">
+      <a href="/app02/help_not" class="navbar-brand"> <img src="/static/bootstrap-dist/img/logo1.png" height="40" width="40"> &nbsp;&nbsp;<strong><i>FDDS 航空</i></strong></a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/app02/welcome" class="nav-link active">欢迎</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/home_not" class="nav-link">主页</a>
+          </li>
+          <li class="nav-item">
+            <a href="#passenager" class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <a href="#passenager" class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+        </ul>
+			  &nbsp; <a href="/app02/register" class="btn btn-info " role="button">注册</a>
+			  &nbsp;&nbsp;&nbsp; <a href="{% url 'login' %}" class="btn btn-info " role="button">登录</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container">
+
+
+              <h1 class="display-5" ><strong>欢迎使用FDDS航空</strong></h1>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <!-- EXPLORE HEAD -->
+<section id="explore-head-section">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">联系我们</h1>
+            <br>
+          <p class="lead">如果您有任何问题，欢迎联系我们。</p>
+            <br>
+          <a href="/app02/help_not" class="btn btn-outline-secondary">详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+</body>
+</html>

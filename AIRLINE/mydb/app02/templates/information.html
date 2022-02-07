@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+    <meta charset="UTF-8">
+    <title>账户信息</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/bootstrap-dist/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/static/bootstrap-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/static/bootstrap-dist/css/login.css">
+</head>
+
+<body id="home">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <div class="container">
+      <a href="/app02/help" class="navbar-brand"> <img src="/static/bootstrap-dist/img/logo1.png" height="40" width="40"> &nbsp;&nbsp;<strong><i>FDDS 航空</i></strong></a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/app02/index" class="nav-link">主页</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/information" class="nav-link active">账户</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/passenger" class="nav-link">乘机人</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/search/" class="nav-link">航班</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/order_list" class="nav-link">订单</a>
+          </li>
+        </ul>
+        &nbsp; <a href="{% url 'logout' %}" class="btn btn-info " role="button">退出登录</a>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container" >
+    <div class="row">
+      <div class="col-sm-10 col-md-10 ml-4 pl-5" >
+              <!-- <h1 class="display-4 text-center">登陆</h1> -->
+            <div class="account-wall_2" style="overflow: scroll;height: 13cm;">
+              <img class="profile-img" src="/static/bootstrap-dist/img/airplane5.jpg"
+              alt="">
+                <form class="form-signin" action="" method="post">
+                    {% csrf_token %}
+                  <p style="color:rgb(70, 68, 68);">账号
+                <input type="text" class="form-control" name="userid" value="{{user_information.userid}}" disabled="disabled" required >
+                </p>
+                    <p style="color:rgb(70, 68, 68);">
+                <input type='hidden' class="form-control" name="id" value="{{user_information.id}}">
+                </p>
+                    <p style="color:rgb(70, 68, 68);">密码
+                    <input type="password" class="form-control" name="password" value="{{user_information.password}}">
+                    </p>
+                    <p style="color:rgb(70, 68, 68);">姓名
+                <input type="text" class="form-control" name="name" value="{{user_information.name}}" >
+                </p>
+                    <p style="color:rgb(70, 68, 68);">身份证号
+                <input type="text" class="form-control" name="idnum" value="{{user_information.idnum}}" >
+                </p>
+                    <p style="color:rgb(70, 68, 68);">电话号码
+                <input type="text" class="form-control" name="telnum" value="{{user_information.telnum}}">
+                </p>
+                    <p style="color:rgb(70, 68, 68);">电子邮箱
+                        <input type="text" class="form-control" name="email" value="{{user_information.email}}">
+                </p>
+                <button class="btn btn-lg btn-primary btn-block mb-2" type="submit">
+                    提交修改</button> {{error2}}
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    <!-- EXPLORE HEAD -->
+<section id="explore-head-section">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">联系我们</h1>
+            <br>
+          <p class="lead">如果您有任何问题，欢迎联系我们。</p>
+            <br>
+          <a href="/app02/help" class="btn btn-outline-secondary">详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+</body>
+</html>
+
+

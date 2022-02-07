@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-Hans">
+
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/styleAdd.css">
+
+  <title>订票</title>
+</head>
+
+<body id="home">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <div class="container">
+       <a href="/app02/help" class="navbar-brand"> <img src="/static/bootstrap-dist/img/logo1.png" height="40" width="40"> &nbsp;&nbsp;<strong><i>Aero Travels</i></strong></a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/app02/index" class="nav-link">主页</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/information" class="nav-link">账户</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/passenger" class="nav-link">乘机人</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/search/" class="nav-link">航班</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/order_list" class="nav-link active">订单</a>
+          </li>
+        </ul>
+        &nbsp; <a href="{% url 'logout' %}" class="btn btn-info " role="button">退出登录</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container">
+          <div class="row">
+
+              <div class="card  card-form" style="width:28cm;">
+
+                <div class="card-body" >
+                    <div style="overflow: scroll;height: 10cm;color:rgb(70, 68, 68);">
+                  <h3 >请选择乘机人</h3><br>
+
+                  <form action="" method="POST">
+                        {% csrf_token %}
+                      <table>
+                      <tbody style="overflow:scroll;">
+                            {% for passenger_object in passenger_list %}
+                            <tr>
+                                <td>
+                            <input type="checkbox" name="check_box_list" value={{passenger_object.idnum}}>
+                    <!--    这里“&nbsp;”表示空格。html代码中的空格换行都不会被打印到网页上。换行用<br>    -->
+                                &nbsp;&nbsp;&nbsp;&nbsp;</td>
+                                <td>
+                                    {{passenger_object.name}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+
+                            <td>身份证号：{{passenger_object.idnum}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td>手机号：{{passenger_object.telnum}}&nbsp;&nbsp;&nbsp;&nbsp;</td>
+                            <td>
+<!--form-control-lg-->
+                            <select name="classtypes" class="form-control-2" >
+                                <option value="firstclass">头等舱</option>
+                                <option value="econmclass">经济舱</option>
+                            </select>
+                            </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                      </table>
+
+                        <br><br>
+                         <button type="submit" class="btn btn-info2">确认订票</button>
+
+                      {% if error_info %}
+                          <script>
+                          alert("{{error_info}}");
+                          </script>
+                      {% endif %}
+                  </form>
+
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+<section id="explore-head-section">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">联系我们</h1>
+            <br>
+          <p class="lead">如果您有任何问题，欢迎联系我们。</p>
+            <br>
+          <a href="/app02/help" class="btn btn-outline-secondary">详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+  <script src="/static/bootstrap-dist/js/jquery.min.js"></script>
+  <script src="/static/bootstrap-dist/js/popper.min.js"></script>
+  <script src="/static/bootstrap-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+
+
+</body>
+</html>
+
+
+

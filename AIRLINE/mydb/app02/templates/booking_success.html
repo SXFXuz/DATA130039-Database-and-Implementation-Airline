@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-Hans">
+
+<head>
+        <!-- 表示跳转到该网页后5秒自动跳转到订单列表页面。content里面的内容分别是刷新等待时间和跳转地址 -->
+  <meta  http-equiv="refresh" content="5;url=/app02/order_list">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/style.css">
+
+  <title>订票成功</title>
+</head>
+
+<body id="home">
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+      <div class="container">
+        <a href="/app02/help" class="navbar-brand"> <img src="/static/bootstrap-dist/img/logo1.png" height="40" width="40"> &nbsp;&nbsp;<strong><i>FDDS 航空</i></strong></a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                     <span class="navbar-toggler-icon"></span>
+                 </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="/app02/information" class="nav-link">主页</a>
+            </li>
+            <li class="nav-item">
+              <a href="/app02/information" class="nav-link">账户</a>
+            </li>
+            <li class="nav-item">
+              <a href="/app02/passenger" class="nav-link">乘机人</a><!--可以把乘机人放到账户下面-->
+            </li>
+            <li class="nav-item">
+              <a href="/app02/search/" class="nav-link">航班</a>
+            </li>
+            <li class="nav-item">
+              <a href="/app02/order_list" class="nav-link active">订单</a>
+            </li>
+          </ul>
+          &nbsp; <a href="{% url 'logout' %}" class="btn btn-info " role="button">退出登录</a>
+        </div>
+      </div>
+    </nav>
+
+  <!-- HOME SECTION -->
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container">
+
+
+              <h1 class="display-4 py-5" ><strong>您已订票成功</strong>.</h1>
+              <div class="d-flex flex-row">
+                <div class="p-4 align-self-start">
+                  <i class="fa fa-check"></i>
+                </div>
+                <div class="p-4 align-self-end">
+                    5秒后跳转到订单列表页面~
+                  <br>
+                  <p><a href="/app02/order_list">点击此处立即跳转~</a> </p>
+				<h1 class="display-8 py-5" ><strong>感谢您使用FDDS航空</strong></h1>
+                   </div>
+              </div>
+
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- EXPLORE HEAD -->
+<section id="explore-head-section">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">联系我们</h1>
+            <br>
+          <p class="lead">如果您有任何问题，欢迎联系我们。</p>
+            <br>
+          <a href="/app02/help" class="btn btn-outline-secondary">详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+  <script src="/static/bootstrap-dist/js/jquery.min.js"></script>
+  <script src="/static/bootstrap-dist/js/popper.min.js"></script>
+  <script src="/static/bootstrap-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
+

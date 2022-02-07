@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html class="no-js" lang="zh-Hans">
+
+<head>
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="/static/bootstrap-dist/css/login.css">
+
+  <title>登录</title>
+</head>
+
+<body id="home">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top">
+    <div class="container">
+      <a href="/app02/help_not" class="navbar-brand"> <img src="/static/bootstrap-dist/img/logo1.png" height="40" width="40"> &nbsp;&nbsp;<strong><i>FDDS 航空</i></strong></a>
+      <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a href="/app02/welcome" class="nav-link">欢迎</a>
+          </li>
+          <li class="nav-item">
+            <a href="/app02/home_not" class="nav-link">主页</a>
+          </li>
+          <li class="nav-item">
+            <a href="#passenager" class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <a href="#passenager" class="nav-link"></a>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link"></a>
+          </li>
+        </ul>
+			  &nbsp; <a href="/app02/register" class="btn btn-info " role="button">注册</a>
+			  &nbsp;&nbsp;&nbsp; <a href="/app02/login" class="btn btn-info " role="button">登录</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <header id="home-section">
+    <div class="dark-overlay">
+      <div class="home-inner">
+        <div class="container" >
+    <div class="row">
+        <div class="col-sm-10 col-md-10 ml-5 pl-5" >
+              <!-- <h1 class="display-4 text-center">登陆</h1> -->
+            <div class="account-wall" >
+                <img class="profile-img" src="/static/bootstrap-dist/img/airplane5.jpg"
+                    alt="">
+                <form class="form-signin" action="" method="post">
+				{% csrf_token %}
+
+                <input type="text" class="form-control" name="userid" placeholder="账号" required > {{error1}}
+                    <br>
+                <input type="password" class="form-control" name="password" placeholder="密码" required> {{error2}}
+                    <br>
+                <button class="btn btn-lg btn-primary btn-block mb-2" type="submit">
+                    登录</button>
+
+                <label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                    <span style="color:#008ed6">记住账号</span>
+                </label>
+                <a href="/app02/help_not" class="pull-right need-help">帮助 </a><span class="clearfix"></span>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+        </div>
+      </div>
+    </div>
+  </header>
+
+<section id="explore-head-section">
+  <div class="container">
+    <div class="row">
+      <div class="col text-center">
+        <div class="p-5">
+          <h1 class="display-4">联系我们</h1>
+            <br>
+          <p class="lead">如果您有任何问题，欢迎联系我们。</p>
+            <br>
+          <a href="/app02/help_not" class="btn btn-outline-secondary">详情</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+  <script src="/static/bootstrap-dist/js/jquery.min.js"></script>
+  <script src="/static/bootstrap-dist/js/popper.min.js"></script>
+  <script src="/static/bootstrap-dist/js/bootstrap.min.js"></script>
+</body>
